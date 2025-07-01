@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Developers - AUDI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: black;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    /* Top bar layout */
+    #topBar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+      background-color: #e0e0e0;
+    }
+
+    #clock {
+      font-size: 1.1em;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: red;
+    }
+
+    .navbar {
+      text-align: center;
+      background-color: black;
+      padding: 15px 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      color: red;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    /* Flip card layout */
+    .lead-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 400px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .flip-card-front {
+      background-color: #fff;
+      color: black;
+    }
+
+    .flip-card-back {
+      background-color: #333;
+      color: white;
+      transform: rotateY(180deg);
+      padding: 20px;
+    }
+
+    .flip-card img {
+      width: 100%;
+      height: 75%;
+    }
+
+    .team {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+
+    .card {
+      width: 250px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+    }
+
+    /* Dark mode overrides */
+    .dark-mode .navbar {
+      background-color: #222;
+    }
+
+    .dark-mode .navbar a {
+      color: lightgray;
+    }
+
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    .dark-mode .flip-card-back {
+      background-color: #444;
+    }
+
+    .dark-mode button {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar with left clock and right button -->
+  <div id="topBar">
+    <div id="clock">Loading time...</div>
+    <button onclick="toggleDarkMode()">
+      <span id="modeIcon">🌞</span> Toggle Dark Mode
+    </button>
+  </div>
+
+  <!-- Centered Navigation -->
+  <div class="navbar">
+    <a href="AUDI html.html">Home</a>
+    <a href="index.html">Dev.Info</a>
+    <a href="contacts.html">Contact/Login/Sign Up</a>
+  </div>
+
+  <h1>Web Developers of AUDI</h1>
+
+  <!-- Lead Developer Card -->
+  <div class="lead-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://www.mansory.com/cdn-cgi/image/format=avif,quality=90/https://cdn.prod.website-files.com/661d6e0d2e84ef511db18f17/6818bd63e807a051a9423617_Audi%2520RS7-Portait_image_-_1-001.webp" alt="Lead Developer">
+          <h2>Nathaniel Kangwana</h2>
+          <p>Lead Developer</p>
+        </div>
+        <div class="flip-card-back">
+          <h2>Nathaniel Kangwana</h2>
+          <p>10 years of experience in developing motor car industry websites. Also contributed to Mercedes and BMW platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Cards -->
+  <div class="team">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4heudYaYG_aIMZD3Qk5vi8s1_yhdME9wwdA&s" alt="Dev 1">
+      <h2>Glory Fowler</h2>
+      <p>Frontend Developer</p>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn.motor1.com/images/mgl/jboxl/s1/1x1/audi-rs6-avant-by-mansory-and-mtm.webp" alt="Dev 2">
+      <h2>Hwang Hee Chan</h2>
+      <p>Backend Developer</p>
+    </div>
+
+    <div class="card">
+      <img src="https://s1.cdn.autoevolution.com/images/news/gallery/mansory-tuned-audi-rs-7-has-more-power-than-the-bugatti-veyron_12.jpg" alt="Dev 3">
+      <h2>Marc Hanselberg</h2>
+      <p>A/B Testing</p>
+    </div>
+  </div>
+
+  <!-- JavaScript for Clock & Dark Mode -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const icon = document.getElementById("modeIcon");
+      icon.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "🌞";
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString();
+      const dateString = now.toDateString();
+      document.getElementById("clock").textContent = dateString + " - " + timeString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
